@@ -1,0 +1,521 @@
+@font-face {
+    font-family: 'custom_font';
+    src: url('fonts/ATTriumvirate-CondensedBlac.ttf') format('truetype');
+}
+
+
+body{
+    font-family: sans-serif;
+    /* background-color: #E1E7F5; */
+    padding-top: 65px;  
+    /* padding-left: 250px; */
+    /* transition: filter 0.3s ease; /* Smooth blur effect */
+    /* position: relative; Ensures the z-index works on child elements  */
+}
+
+/* body.blurred {
+    filter: blur(5px); /* Apply blur to the entire body */
+/* } */
+
+.header{
+    background-color: rgb(255, 255, 255);    /*only to view header height , white later*/
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+}
+
+.left_section{
+    /* margin-right: 50px; */
+    display: flex;
+    width: 275px; 
+    align-items: center;
+    margin-left:20px
+}
+
+a{
+    text-decoration: none;
+}
+
+.college_info{
+    display: flex;
+    /* align-items: center;    to align logo , shrinks image */
+}
+
+.college_logo{
+    /* display: inline-block; */
+    width: 52px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.college_name{
+    /* display: inline-block; */
+    font-family:custom_font;
+    vertical-align:top;
+    font-size: 9.96px;
+    font-weight:bold;
+    color: hsl(220, 48%, 28%);
+}  
+
+.naac_logo{
+    display: inline-block;
+    width: 70px;
+    margin-left: 10px;
+}
+
+
+.keystone{
+    font-size: 24px;
+}
+
+
+.middle_section{
+    /* flex: 1; */
+    /* margin-left: 100px; */
+    margin-right: 100px;            
+    max-width: 600px;
+    display:flex;
+    
+}
+
+.search_icon{
+    width: 36px;
+    height:36px;
+    border-style:solid;
+    border-width: 1px;}
+
+.search_input{
+    width:400px;
+    height:34px;
+    border-style: solid;
+    font-size: 15px;
+    border-width: 1px;
+    padding-left:12px;
+}
+
+.right_section{
+    margin-right:30px;
+    display: flex;
+    gap: 15px;
+}
+
+.reg_button{
+    height:35px;
+    width:70px;
+    background-color: hsl(220, 48%, 28%);
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px gray;
+    transition: background-color 0.5s;
+}
+
+.reg_button:hover{
+    background-color: hsl(220, 48%, 38%);
+}
+
+.reg_button:active{
+    background-color: hsl(220, 48%, 48%);
+}
+
+
+
+
+
+/* sidebar */
+
+.sidebar{
+    position: fixed;
+    top: 65px;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #152451;
+    width: 250px;
+    color: rgb(248, 243, 243);
+    align-items: center;
+}
+
+.sidebar_header{
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.menu{
+    margin-top: 30px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    width: 100%;
+    /* height: 100%; */
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    /* width: 250px; */
+}
+
+.menu a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* padding: 20px 0; */
+    width: 100%;
+    text-align: center;
+}
+
+.menu a:hover{
+    background-color: hsl(225, 59%, 30%);
+}
+
+
+
+
+
+
+
+
+
+.login_popup{
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: #92AFD7;
+    top:-150%;    
+    left:50%;
+    transform: translate(-50% , -50%);
+    height: 380px;
+    width: 380px;
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+    border:1px solid black;
+    border-radius: 15px;
+    padding-bottom: 10px;
+    opacity:0;
+    /* position: absolute; Ensure it's positioned above the content */
+    /* z-index: 10; Ensure the login box is above the blurred content */
+    /* transition: opacity 0.5s ease-in-out, top 0.5s ease; */
+    /* opacity:0;*/
+    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    /* transition:top 0ms ease-in-out 200ms,
+               opacity 200ms ease-in-out 200ms,
+               transform 2ms ease-in-out 200ms;  */
+    
+} 
+
+.login_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.1px;
+    height: 85px;
+    width: 370px;
+}
+
+.close_btn{
+    text-align: center;
+    font-size:20px;
+    border:1px solid black;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    align-self: flex-start;
+    cursor:pointer;
+    background-color:#152451;
+    color: white;
+}
+
+.close_btn:hover{
+    background-color: hsl(225, 59%, 30%);
+}
+
+.close_btn:active{
+    background-color: hsl(225, 59%, 40%);
+}
+
+/* .login_popup.active{
+    top:50%;
+    opacity:1;
+    transform: translate(-50% , -50%) scale(1);
+    transition:top 0ms ease-in-out 0ms,
+               opacity 200ms ease-in-out 200ms,
+               transform 2ms ease-in-out 200ms;
+} */
+
+.log_in{
+    /* position: absolute; */
+    font-size: 30px;
+    top: 20px;
+    font-weight: bold;
+    color:rgb(6, 0, 12);
+    padding-left:50px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.email_pass_text{
+    font-size: 20px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login_details{
+    display:flex ;
+    flex-direction: column;
+    gap:30px;
+    margin-bottom: 30px;
+    margin-top:0px
+}
+
+.login_input{
+    font-size:16px;
+    width: 300px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.admin_input{
+    width: 150px;
+    height: 25px;
+}
+
+.register_button{
+    background-color: #152451;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 320px;
+    height: 40px;
+    border:1px solid black;
+    cursor:pointer
+}
+
+.register_button:hover{
+    background-color: hsl(225, 59%, 30%);
+}
+
+.register_button:active{
+    background-color: hsl(225, 59%, 40%);
+}
+
+
+
+
+
+/* Event form */
+
+.event_form{
+    display: flex;
+    flex-direction:column;
+    background-color: rgb(255, 255, 255);
+    margin-left: 50px;
+    margin-right:50px;
+    /* border:1px solid black; */
+    /* border-radius: 20px; */
+    padding: 20px 100px;
+    /* box-shadow: 0px 0px 15px rgb(112, 108, 108); */
+    /* border: 5px solid transparent; 
+    border-image: linear-gradient(135deg, #3a7cb3, hsl(0, 93%, 52%));
+    border-image-slice: 1;  */
+}
+
+#create_event_header{
+    /* font-family: serif; */
+    font-family: 'Arial';
+    font-size: 5rem;
+    font-weight:800;
+    color:#2c5081;
+    font-weight: bold; /* Optional: Make the text bold */
+    background: linear-gradient(90deg, #007BFF, #b13718); /* Gradient from blue to orange */
+    -webkit-background-clip: text; /* Ensures the gradient is applied to the text only */
+    -webkit-text-fill-color: transparent; /* Makes the background visible */
+    text-fill-color: transparent; /* For better browser support */
+    text-align: center; /* Optional: Center-align the text */
+    text-shadow: 
+        3px 3px 4px rgba(0, 0, 0, 0.3), /* Soft shadow */
+        -3px -3px 4px rgba(255, 255, 255, 0.2), /* Light highlight */
+        5px 5px 6px rgba(0, 0, 0, 0.2); /* Slightly larger shadow */
+    
+}
+
+.event_form_details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+    width: 50%;
+    /* background-color: rgb(217, 238, 241); */
+}
+
+.details_key{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+
+
+input{
+    /* width: 100%;
+    background-color:#f4f6f8; */
+}
+
+.input_form_data{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 20px;
+    outline: none;
+    font-size: 20px;
+    width: 100%;
+    /* background-color:#f4f6f8; */
+}
+
+#coordinator_title,#chiefGuest_title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #2c5081;
+}
+
+.sub_form_details{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    padding-left: 50px;
+}
+
+textarea {
+    width: 100%; /* Full width relative to its container */
+    max-width: 100%;
+    min-height: 300px;
+    /* resize: vertical; */
+    resize: none; /* Disable manual resizing */
+    overflow-y: auto;
+    line-height: 1.6; /* Space between lines */
+    max-height: 600px;
+}
+
+/* .add_event_button{
+    font-size: 20px;
+    padding:15px 15px;
+    background-color: hsl(225, 59%, 20%);
+    color: white;
+    cursor: pointer;
+} */
+
+.add_event_button:hover{
+    background-color: hsl(225, 59%, 30%)
+}
+
+.add_event_button:active{
+    background-color: hsl(225, 59%, 40%)
+}
+
+.event_form_footer{
+    margin-top: 50px;
+    text-align: right;
+}
+
+
+
+/* event 2 */
+
+.sub_form_details{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.event_main_details_and_thumbnail{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.event_thumbnail{
+    /* border: 5px solid rgb(228, 121, 33); */
+    border-radius: 20px;
+    border: 5px solid transparent; /* Transparent border for gradient background */
+    border-image: linear-gradient(135deg, #3a7cb3, #db925a); /* Gradient colors */
+    border-image-slice: 1; /* Ensures full gradient is applied to the border */
+    width: 50%;
+    padding: 20px 40px;
+}
+
+.event_main_details{
+    /* width:800px; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.event_sub_details{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#event_type_box{
+    width: 315px;
+}
+
+#event_category_box{
+    width: 410px;
+}
+
+.event_other_details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.event_coordinator_details,.event_guest_details{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 15px;
+}
+
+.event_guest_details{
+    width: 50%;
+}
+
+
+.add_event{
+    /* display: flex;
+    justify-content: flex-end; */
+    text-align: right;
+}
+
+.add_event_button{
+    font-size: 15px;
+    padding:10px 15px;
+    border: none;
+    background-color: hsl(225, 59%, 20%);
+    color: white;
+    cursor: pointer;
+}   
+
+.single_detail{
+    /* background-color:#f4f6f8; */
+    padding: 20px 50px;
+    border-radius: 30px;
+    /* box-shadow: 0px 0px 8px rgb(112, 108, 108); */
+    /* width: 50%; */
+}
